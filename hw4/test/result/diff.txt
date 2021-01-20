@@ -1,0 +1,383 @@
+5_BinaryOperator
+--- your output:(result/5_BinaryOperator)
++++ answer:(./basic_cases/sample_solutions/5_BinaryOperator)
+@@ -119,7 +119,7 @@
+ ==============================================================================================================
+ Name                             Kind       Level      Type             Attribute  
+ --------------------------------------------------------------------------------------------------------------
+-vDecimal                         constant   1(local)   integer          1299999999999999926987787223815995548147618397073328787315660527430241102395086135672307305595051606245828558977823573803008.000000
++vDecimal                         variable   1(local)   integer                     
+ vReal                            constant   1(local)   real             1.000000   
+ vScientific                      constant   1(local)   real             12300.000000
+ vDecimalArr                      variable   1(local)   integer [1][1]              
+@@ -135,87 +135,66 @@
+ octal                            function   0(global)  integer                     
+ scientific                       function   0(global)  real                        
+ --------------------------------------------------------------------------------------------------------------
+-<Error> Found in line 43, column 26: there is an over array subscript on ''
+-        print 10 mod (03 mod vDecimalArr[1][3]);
+-                             ^
+-<Error> Found in line 44, column 23: there is an over array subscript on ''
+-        print octal() mod vDecimalArr[2][1];
+-                          ^
+-<Error> Found in line 49, column 11: expression of print statement must be scalar type
+-        print vBoolArr[3] or vBoolArr[2];
+-              ^
+-<Error> Found in line 61, column 19: invalid operands to binary operator '+' ('string' and 'string')
+-        print "SSLAB" + "NO.1";
+-                      ^
+-<Error> Found in line 62, column 22: there is an over array subscript on ''
+-        print "SSLAB" + (vStringArr[1][2] + "AAAAAAA");
+-                         ^
+-<Error> Found in line 62, column 39: invalid operands to binary operator '+' ('string [1][1]' and 'integer')
+-        print "SSLAB" + (vStringArr[1][2] + "AAAAAAA");
+-                                          ^
+-<Error> Found in line 62, column 19: invalid operands to binary operator '+' ('string [1][1]' and 'integer')
+-        print "SSLAB" + (vStringArr[1][2] + "AAAAAAA");
+-                      ^
+-<Error> Found in line 69, column 26: invalid operands to binary operator '+' ('integer [1][1]' and 'real [1][1]')
++<Error> Found in line 69, column 26: invalid operands to binary operator '+' ('integer [1]' and 'real')
+         print vDecimalArr[2] + vRealArr[4][2];
+                              ^
+-<Error> Found in line 69, column 11: expression of print statement must be scalar type
+-        print vDecimalArr[2] + vRealArr[4][2];
+-              ^
+-<Error> Found in line 70, column 11: there is an over array subscript on ''
+-        print vRealArr[4][2] - vDecimalArr[2];
+-              ^
+-<Error> Found in line 70, column 26: invalid operands to binary operator '-' ('real [1][1]' and 'integer [1][1]')
++<Error> Found in line 70, column 26: invalid operands to binary operator '-' ('real' and 'integer [1]')
+         print vRealArr[4][2] - vDecimalArr[2];
+                              ^
+-<Error> Found in line 71, column 23: invalid operands to binary operator '*' ('boolean [1]' and 'real [1][1]')
++<Error> Found in line 71, column 23: invalid operands to binary operator '*' ('boolean' and 'real')
+         print vBoolArr[4] * vRealArr[3][3];
+                           ^
+-<Error> Found in line 71, column 11: expression of print statement must be scalar type
+-        print vBoolArr[4] * vRealArr[3][3];
+-              ^
+-<Error> Found in line 72, column 11: there is an over array subscript on ''
+-        print vRealArr[4][2] / vRealArr[2];
+-              ^
+-<Error> Found in line 72, column 26: invalid operands to binary operator '/' ('real [1][1]' and 'real [1][1]')
++<Error> Found in line 72, column 26: invalid operands to binary operator '/' ('real' and 'real [1]')
+         print vRealArr[4][2] / vRealArr[2];
+                              ^
+-<Error> Found in line 73, column 23: there is an over array subscript on ''
+-        print ("SSLAB" + (vRealArr[4][2] - vDecimalArr[2])) + (vRealArr[4][2] + (true and false));
+-                          ^
+-<Error> Found in line 73, column 38: invalid operands to binary operator '-' ('real [1][1]' and 'integer [1][1]')
++<Error> Found in line 73, column 38: invalid operands to binary operator '-' ('real' and 'integer [1]')
+         print ("SSLAB" + (vRealArr[4][2] - vDecimalArr[2])) + (vRealArr[4][2] + (true and false));
+                                          ^
+-<Error> Found in line 73, column 20: invalid operands to binary operator '+' ('real [1][1]' and 'integer [1][1]')
+-        print ("SSLAB" + (vRealArr[4][2] - vDecimalArr[2])) + (vRealArr[4][2] + (true and false));
+-                       ^
+-<Error> Found in line 73, column 75: invalid operands to binary operator '+' ('boolean' and 'boolean')
++<Error> Found in line 73, column 75: invalid operands to binary operator '+' ('real' and 'boolean')
+         print ("SSLAB" + (vRealArr[4][2] - vDecimalArr[2])) + (vRealArr[4][2] + (true and false));
+                                                                               ^
+-<Error> Found in line 73, column 57: invalid operands to binary operator '+' ('boolean' and 'boolean')
+-        print ("SSLAB" + (vRealArr[4][2] - vDecimalArr[2])) + (vRealArr[4][2] + (true and false));
+-                                                            ^
+-<Error> Found in line 80, column 11: there is an over array subscript on ''
++<Error> Found in line 76, column 20: invalid operands to binary operator 'mod' ('integer' and 'real')
++        print vDecimal mod vReal;
++                       ^
++<Error> Found in line 77, column 17: invalid operands to binary operator 'mod' ('real' and 'integer')
++        print vReal mod decimal();
++                    ^
++<Error> Found in line 78, column 17: invalid operands to binary operator 'mod' ('real' and 'string')
++        print vReal mod "SSLAB";
++                    ^
++<Error> Found in line 79, column 23: invalid operands to binary operator 'mod' ('real' and 'boolean')
++        print vScientific mod true;
++                          ^
++<Error> Found in line 80, column 28: invalid operands to binary operator 'mod' ('string' and 'integer')
+         print vStringArr[3][3] mod (3 mod 2);
+-              ^
+-<Error> Found in line 85, column 11: expression of print statement must be scalar type
++                               ^
++<Error> Found in line 83, column 14: invalid operands to binary operator 'and' ('integer' and 'boolean')
++        print 10 and true;
++                 ^
++<Error> Found in line 84, column 17: invalid operands to binary operator 'and' ('boolean' and 'string')
++        print false and "SSLAB";
++                    ^
++<Error> Found in line 85, column 20: invalid operands to binary operator 'or' ('boolean [1]' and 'boolean')
+         print vBoolArr or true;
+-              ^
+-<Error> Found in line 88, column 11: expression of print statement must be scalar type
++                       ^
++<Error> Found in line 88, column 26: invalid operands to binary operator '<' ('integer [1]' and 'real')
+         print vDecimalArr[2] < vRealArr[4][2];
+-              ^
+-<Error> Found in line 89, column 11: there is an over array subscript on ''
++                             ^
++<Error> Found in line 89, column 26: invalid operands to binary operator '=' ('real' and 'integer [1]')
+         print vRealArr[4][2] = vDecimalArr[2];
+-              ^
+-<Error> Found in line 90, column 11: expression of print statement must be scalar type
++                             ^
++<Error> Found in line 90, column 23: invalid operands to binary operator '>=' ('boolean' and 'real')
+         print vBoolArr[4] >= vRealArr[3][3];
+-              ^
+-<Error> Found in line 91, column 11: there is an over array subscript on ''
++                          ^
++<Error> Found in line 91, column 26: invalid operands to binary operator '<>' ('real' and 'real [1]')
+         print vRealArr[4][2] <> vRealArr[2];
+-              ^
+-<Error> Found in line 92, column 24: there is an over array subscript on 'vDecimal'
++                             ^
++<Error> Found in line 92, column 21: invalid operands to binary operator '<>' ('integer' and 'boolean')
+         print (vDecimal <> vBoolArr[3]) and (0124 <= vStringArr[3]);
+-                           ^
++                        ^
++<Error> Found in line 92, column 47: invalid operands to binary operator '<=' ('integer' and 'string [1]')
++        print (vDecimal <> vBoolArr[3]) and (0124 <= vStringArr[3]);
++                                                  ^
+ <Error> Found in line 95, column 19: invalid operands to binary operator '+' ('string' and 'integer')
+         print "SSLAB" + decimal();
+                       ^
+@@ -228,3 +207,18 @@
+ <Error> Found in line 98, column 19: invalid operands to binary operator '/' ('string' and 'string')
+         print "SSLAB" / "SS";
+                       ^
++<Error> Found in line 99, column 19: invalid operands to binary operator 'mod' ('string' and 'string')
++        print "SSLAB" mod "SS";
++                      ^
++<Error> Found in line 100, column 19: invalid operands to binary operator 'and' ('string' and 'string')
++        print "SSLAB" and "SS";
++                      ^
++<Error> Found in line 101, column 19: invalid operands to binary operator 'or' ('string' and 'string')
++        print "SSLAB" or "SS";
++                      ^
++<Error> Found in line 102, column 19: invalid operands to binary operator '<' ('string' and 'string')
++        print "SSLAB" < "SS";
++                      ^
++<Error> Found in line 103, column 19: invalid operands to binary operator '>' ('string' and 'string')
++        print "SSLAB" > "SS";
++                      ^
+
+6_UnaryOperator
+--- your output:(result/6_UnaryOperator)
++++ answer:(./basic_cases/sample_solutions/6_UnaryOperator)
+@@ -10,7 +10,7 @@
+ 10:     print not arr;
+ 11: end
+ 12: end
+-puopuopuopuo==============================================================================================================
++==============================================================================================================
+ Name                             Kind       Level      Type             Attribute  
+ --------------------------------------------------------------------------------------------------------------
+ int                              variable   1(local)   integer                     
+@@ -21,7 +21,9 @@
+ --------------------------------------------------------------------------------------------------------------
+ UnaryOperator                    program    0(global)  void                        
+ --------------------------------------------------------------------------------------------------------------
+-
+-|---------------------------------------------------|
+-|  There is no syntactic error and semantic error!  |
+-|---------------------------------------------------|
++<Error> Found in line 8, column 12: there is an over array subscript on 'int'
++        print -int[23][214][421];
++               ^
++<Error> Found in line 10, column 11: invalid operand to unary operator 'not' ('boolean [10][100]')
++        print not arr;
++              ^
+
+11_condition
+--- your output:(result/11_condition)
++++ answer:(./basic_cases/sample_solutions/11_condition)
+@@ -21,7 +21,19 @@
+ 21:     end do
+ 22: end
+ 23: end
+-pipipw==============================================================================================================
++==============================================================================================================
++Name                             Kind       Level      Type             Attribute  
++--------------------------------------------------------------------------------------------------------------
++--------------------------------------------------------------------------------------------------------------
++==============================================================================================================
++Name                             Kind       Level      Type             Attribute  
++--------------------------------------------------------------------------------------------------------------
++--------------------------------------------------------------------------------------------------------------
++==============================================================================================================
++Name                             Kind       Level      Type             Attribute  
++--------------------------------------------------------------------------------------------------------------
++--------------------------------------------------------------------------------------------------------------
++==============================================================================================================
+ Name                             Kind       Level      Type             Attribute  
+ --------------------------------------------------------------------------------------------------------------
+ int                              variable   1(local)   integer                     
+@@ -31,7 +43,9 @@
+ --------------------------------------------------------------------------------------------------------------
+ condition                        program    0(global)  void                        
+ --------------------------------------------------------------------------------------------------------------
+-
+-|---------------------------------------------------|
+-|  There is no syntactic error and semantic error!  |
+-|---------------------------------------------------|
++<Error> Found in line 7, column 12: invalid operands to binary operator '+' ('integer' and 'string')
++        if int + "SSLAB" then
++               ^
++<Error> Found in line 13, column 12: the expression of condition must be boolean type
++        if int + 10 then
++               ^
+
+12_ForLoop
+--- your output:(result/12_ForLoop)
++++ answer:(./basic_cases/sample_solutions/12_ForLoop)
+@@ -42,7 +42,6 @@
+ --------------------------------------------------------------------------------------------------------------
+ ForLoop                          program    0(global)  void                        
+ --------------------------------------------------------------------------------------------------------------
+-
+-|---------------------------------------------------|
+-|  There is no syntactic error and semantic error!  |
+-|---------------------------------------------------|
++<Error> Found in line 7, column 5: the lower bound and upper bound of iteration count must be in the incremental order
++        for idx := 10 to 1 do
++        ^
+
+13_ret
+--- your output:(result/13_ret)
++++ answer:(./basic_cases/sample_solutions/13_ret)
+@@ -36,6 +36,12 @@
+ ret                              program    0(global)  void                        
+ func                             function   0(global)  boolean                     
+ --------------------------------------------------------------------------------------------------------------
++<Error> Found in line 9, column 12: return 'boolean [100]' from a function with return type 'boolean'
++        return bool[1];
++               ^
+ <Error> Found in line 15, column 12: there is an over array subscript on 'bool'
+         return bool[1][1][1];
+                ^
++<Error> Found in line 21, column 5: program/procedure should not return a value
++        return 10;
++        ^
+
+14_AdvSymbol
+--- your output:(result/14_AdvSymbol)
++++ answer:(./basic_cases/sample_solutions/14_AdvSymbol)
+@@ -89,6 +89,12 @@
+ <Error> Found in line 11, column 9: symbol 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' is redeclared
+             aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa : integer;
+             ^
++<Error> Found in line 29, column 12: return 'integer' from a function with return type 'string'
++        return p1;
++               ^
+ <Error> Found in line 36, column 9: symbol 'p1' is redeclared
+         var p1 : integer;
+             ^
++<Error> Found in line 39, column 12: return 'string' from a function with return type 'integer'
++        return p1;
++               ^
+
+15_AdvSema
+--- your output:(result/15_AdvSema)
++++ answer:(./basic_cases/sample_solutions/15_AdvSema)
+@@ -69,73 +69,6 @@
+ 69:     procedure2(extern());
+ 70: end
+ 71: end
+-==============================================================================================================
+-Name                             Kind       Level      Type             Attribute  
+---------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+-==============================================================================================================
+-Name                             Kind       Level      Type             Attribute  
+---------------------------------------------------------------------------------------------------------------
+-a                                parameter  1(local)   integer                     
+---------------------------------------------------------------------------------------------------------------
+-==============================================================================================================
+-Name                             Kind       Level      Type             Attribute  
+---------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+-==============================================================================================================
+-Name                             Kind       Level      Type             Attribute  
+---------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+-==============================================================================================================
+-Name                             Kind       Level      Type             Attribute  
+---------------------------------------------------------------------------------------------------------------
+-a                                parameter  1(local)   integer [30][0]             
+-b                                parameter  1(local)   integer [30][0]             
+-c                                parameter  1(local)   integer [30][0]             
+-d                                parameter  1(local)   integer [30][0]             
+-e                                parameter  1(local)   integer [30][0]             
+-f                                parameter  1(local)   integer [30][0]             
+---------------------------------------------------------------------------------------------------------------
+-==============================================================================================================
+-Name                             Kind       Level      Type             Attribute  
+---------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+-==============================================================================================================
+-Name                             Kind       Level      Type             Attribute  
+---------------------------------------------------------------------------------------------------------------
+-str                              loop_var   3(local)   integer                     
+---------------------------------------------------------------------------------------------------------------
+-==============================================================================================================
+-Name                             Kind       Level      Type             Attribute  
+---------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+-==============================================================================================================
+-Name                             Kind       Level      Type             Attribute  
+---------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+-==============================================================================================================
+-Name                             Kind       Level      Type             Attribute  
+---------------------------------------------------------------------------------------------------------------
+-str                              constant   2(local)   string           22         
+---------------------------------------------------------------------------------------------------------------
+-==============================================================================================================
+-Name                             Kind       Level      Type             Attribute  
+---------------------------------------------------------------------------------------------------------------
+-i                                loop_var   1(local)   integer                     
+---------------------------------------------------------------------------------------------------------------
+-==============================================================================================================
+-Name                             Kind       Level      Type             Attribute  
+---------------------------------------------------------------------------------------------------------------
+-AdvSema                          program    0(global)  void                        
+-global                           variable   0(global)  integer                     
+-procedure1                       function   0(global)  void                        
+-procedure2                       function   0(global)  void             integer    
+-extern                           function   0(global)  integer                     
+-parameterErrors                  function   0(global)  void             integer [30][0], integer [30][0], integer [30][0], integer [30][0], integer [30][0], integer [30][0]
+-int                              variable   0(global)  integer                     
+-arr                              variable   0(global)  real [30]                   
+-i                                variable   0(global)  string                      
+---------------------------------------------------------------------------------------------------------------
+ <Error> Found in line 19, column 1: symbol 'global' is redeclared
+     global()
+     ^
+@@ -157,6 +90,9 @@
+ <Error> Found in line 27, column 32: 'f' declared as an array with an index that is not greater than 0
+     parameterErrors(a, b, c, d, e, f : array 30 of array 0 of integer);
+                                    ^
++<Error> Found in line 35, column 11: expression of print statement must be scalar type
++        print procedure1();
++              ^
+ <Error> Found in line 38, column 11: use of undeclared symbol 'null'
+         print null();
+               ^
+@@ -169,12 +105,15 @@
+ <Error> Found in line 41, column 22: incompatible type passing 'string' to parameter of type 'integer'
+         print procedure2("I'm string");
+                          ^
++<Error> Found in line 44, column 19: invalid operands to binary operator 'and' ('real' and 'real')
++        print arr[1.0 and 2.0];
++                      ^
+ <Error> Found in line 56, column 13: symbol 'i' is redeclared
+             for i := 19 to 25 do
+                 ^
++<Error> Found in line 62, column 17: invalid operands to binary operator 'and' ('integer' and 'string')
++            print i and str;
++                    ^
+ <Error> Found in line 67, column 5: call of non-function symbol 'global'
+         global();
+         ^
+-<Error> Found in line 69, column 5: too few/much arguments provided for function 'procedure2'
+-        procedure2(extern());
+-        ^
+
